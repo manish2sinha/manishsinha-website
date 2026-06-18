@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manish Sinha — Operating Model & Organization Design Partner. Helping GCC leaders build the structural foundation that lets the organization keep pace with growth.">
-  <title>Manish Sinha — Operating Model & Organization Design Partner</title>
+  <meta name="description" content="Manish Sinha — GCC Scalability Partner. Operating model and organization design for Global Capability Centers that are scaling, optimizing, or preparing for the next phase.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.manishsinha.com">
+  <meta property="og:title"       content="Manish Sinha — GCC Scalability Partner">
+  <meta property="og:description" content="Operating model and organization design for Global Capability Centers at every scale.">
+  <meta property="og:site_name"   content="Manish Sinha">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Manish Sinha — GCC Scalability Partner">
+  <meta name="twitter:description" content="Operating model and organization design for Global Capability Centers at every scale.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23C9A44D'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia%2Cserif' font-size='17' font-weight='bold' fill='%230D1117'%3EM%3C/text%3E%3C/svg%3E">
+  <title>Manish Sinha — GCC Scalability Partner</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --teal:      #0F6E56;
-      --teal-lite: #E1F5EE;
-      --dark:      #0D1117;
-      --dark-mid:  #1C2128;
-      --parchment: #E8DCC8;
-      --text:      #1A1A1A;
-      --body:      #4A4A4A;
-      --muted:     #6B7280;
-      --border:    #E5E7EB;
-      --white:     #FFFFFF;
-      --bg:        #F9FAFB;
-      --radius:    8px;
+      --ink:        #0D1117;
+      --ink-mid:    #1C2128;
+      --amber:      #C9A44D;
+      --amber-lite: #FAF3E0;
+      --amber-dark: #A8873E;
+      --parchment:  #E8DCC8;
+      --paper:      #F9F6F0;
+      --white:      #FFFFFF;
+      --text:       #1A1A1A;
+      --body:       #3D3D3D;
+      --muted:      #6B7280;
+      --border:     #E5E7EB;
+      --radius:     6px;
     }
 
     html { scroll-behavior: smooth; }
@@ -30,333 +40,259 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      text-align: center;
     }
 
-    .container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+    /* ── SHARED WRAP ── */
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 40px);
+    }
+
+    /* ── LABELS ── */
+    .label {
+      display: block;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .label-amber { color: var(--amber); }
+    .label-muted { color: var(--muted); }
 
     /* ── NAV ── */
     .nav {
-      background: var(--dark);
-      padding: 20px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #1C2128;
+      position: sticky; top: 0; z-index: 100;
+      background: var(--ink);
+      border-bottom: 1px solid var(--ink-mid);
     }
-
+    .nav-inner {
+      max-width: 700px; margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 40px);
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
     .nav-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--parchment);
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-
-    .nav-links a {
-      font-size: 13px;
-      color: #94A3B8;
+      font-size: 15px; font-weight: 700;
+      color: var(--parchment); letter-spacing: 0.02em;
       text-decoration: none;
-      transition: color 0.15s;
     }
-
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; color: #6B7280;
+      text-decoration: none; transition: color 0.15s;
+    }
     .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: 13px; font-weight: 600; color: var(--amber);
+      text-decoration: none; border: 1px solid #2D3748;
+      border-radius: var(--radius); padding: 7px 16px;
+      white-space: nowrap;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .nav-cta:hover { border-color: var(--amber); background: rgba(201,164,77,0.08); }
 
     /* ── HERO ── */
     .hero {
-      background: var(--dark);
-      padding: 80px 28px 88px;
+      background: var(--ink);
+      padding: clamp(40px, 5vw, 60px) clamp(20px, 4vw, 40px) clamp(48px, 6vw, 72px);
     }
-
-    .hero-inner { max-width: 900px; margin: 0 auto; }
-
-    .hero-eyebrow {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      display: block;
-    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
 
     .hero h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(26px, 4.5vw, 46px);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      max-width: 780px;
-      margin-bottom: 24px;
-    }
-
-    .hero-sub {
-      font-size: clamp(14px, 2vw, 17px);
-      color: #94A3B8;
-      max-width: 580px;
-      line-height: 1.75;
+      font-size: clamp(24px, 3.6vw, 38px);
+      font-weight: 400; color: var(--white);
+      line-height: 1.22; letter-spacing: -0.015em;
+      margin-bottom: 44px;
     }
 
     /* ── SIGNALS ── */
-    .signals { background: var(--white); padding: 80px 28px; }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .section-heading {
-      font-size: clamp(19px, 2.8vw, 25px);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
+    .signals { margin-bottom: 44px; }
     .signal {
-      padding: 22px 0 22px 24px;
-      border-left: 2px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      transition: border-left-color 0.2s;
+      padding: 16px 0;
+      border-bottom: 1px solid #1C2128;
     }
-
-    .signal:first-of-type { border-top: 1px solid var(--border); }
-    .signal:hover { border-left-color: var(--teal); }
-
+    .signal:first-child { border-top: 1px solid #1C2128; }
     .signal p {
-      font-size: 15px;
-      color: var(--body);
-      line-height: 1.75;
-      max-width: 720px;
+      font-size: 15px; color: #8B9AB0; line-height: 1.7;
     }
 
-    /* ── PULSE CTA ── */
-    .pulse-cta { background: var(--dark); padding: 72px 28px; }
-
-    .pulse-cta-inner { max-width: 900px; margin: 0 auto; }
-
-    .pulse-cta h2 {
-      font-size: clamp(17px, 2.5vw, 23px);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.4;
-      margin-bottom: 12px;
-      max-width: 600px;
+    /* ── BRIDGE ── */
+    .bridge {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px; color: #8B9AB0;
+      font-style: italic; line-height: 1.65;
     }
 
-    .pulse-cta-sub {
-      font-size: 15px;
-      color: #64748B;
-      margin-bottom: 36px;
-      max-width: 520px;
-      line-height: 1.7;
+    /* ── SECTIONS ── */
+    .section {
+      padding: clamp(48px, 6vw, 72px) clamp(20px, 4vw, 40px);
+    }
+    .section-inner { max-width: 700px; margin: 0 auto; }
+
+    .sec-h {
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 700; color: var(--text);
+      line-height: 1.3; margin-bottom: 14px;
+    }
+    .sec-h-serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 400; color: var(--white);
+      line-height: 1.35; margin-bottom: 14px;
+    }
+    .sec-sub {
+      font-size: 16px; color: var(--body);
+      line-height: 1.75; margin-bottom: 40px;
+    }
+    .sec-sub-dark {
+      font-size: 16px; color: #6B7280;
+      line-height: 1.75; margin-bottom: 36px;
     }
 
-    .pulse-card {
-      background: #1C2128;
-      border: 1px solid #2D3748;
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      max-width: 540px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* ── FRAMEWORK ── */
+    .framework-section { background: var(--paper); }
+    .tier { margin-bottom: 32px; }
+    .tier:last-child { margin-bottom: 0; }
+    .tier-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 14px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dim-row {
+      display: flex; flex-wrap: wrap;
+      gap: 8px; justify-content: center;
+    }
+    .dim {
+      font-size: 13px; font-weight: 600; color: var(--text);
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 4px; padding: 9px 18px;
+    }
+    .dim.anchor { border-left: 3px solid var(--amber); }
+    .dim.core   { border-left: 3px solid #94A3B8; }
+    .dim.hygiene{ border-left: 3px solid var(--border); }
+
+    /* ── DIAGNOSTIC ── */
+    .diagnostic-section { background: var(--ink); }
+    .diag-card {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+      max-width: 520px; margin: 0 auto;
+      background: var(--ink-mid); border: 1px solid #2D3748;
+      border-radius: var(--radius); padding: 24px 28px;
       text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
-      gap: 20px;
     }
-
-    .pulse-card:hover { border-color: var(--teal); background: #222B38; }
-
-    .pulse-card-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .pulse-card-meta { font-size: 13px; color: #64748B; }
-
-    .pulse-card-arrow { font-size: 22px; color: var(--teal); flex-shrink: 0; }
+    .diag-card:hover { border-color: var(--amber); background: #222B38; }
+    .diag-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; text-align: left; }
+    .diag-meta  { font-size: 13px; color: #4B5563; text-align: left; }
+    .diag-arrow { font-size: 20px; color: var(--amber); flex-shrink: 0; }
 
     /* ── PRACTITIONER ── */
-    .practitioner { background: var(--white); padding: 80px 28px; }
-
-    .practitioner-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .practitioner-text p {
-      font-size: 15px;
-      color: var(--body);
-      line-height: 1.8;
+    .practitioner-section { background: var(--white); }
+    .photo-wrap { margin: 0 auto 28px; width: 160px; }
+    .photo-wrap img { width: 100%; border-radius: var(--radius); display: block; }
+    .photo-name { font-size: 14px; font-weight: 700; color: var(--text); margin-top: 12px; }
+    .photo-sub  { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+    .prac-lead {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(17px, 2vw, 20px);
+      color: var(--text); line-height: 1.55;
       margin-bottom: 20px;
     }
-
-    .practitioner-text p:last-of-type { margin-bottom: 0; }
-
-    .credentials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
+    .prac-body {
+      font-size: 15px; color: var(--body);
+      line-height: 1.85; margin-bottom: 24px;
+      text-align: left;
+    }
+    .creds { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
+    .cred {
+      font-size: 12px; font-weight: 500;
+      color: var(--amber); background: var(--amber-lite);
+      border-radius: 20px; padding: 5px 14px;
     }
 
-    .credential-tag {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--teal);
-      background: var(--teal-lite);
-      padding: 5px 12px;
-      border-radius: 20px;
+    /* ── TESTIMONIAL ── */
+    .testimonial-section { background: var(--ink); }
+    .t-quote {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--white); font-style: italic;
+      line-height: 1.75; margin-bottom: 28px;
+      text-align: left;
     }
+    .t-quote::before { content: '\201C'; color: var(--amber); }
+    .t-quote::after  { content: '\201D'; color: var(--amber); }
+    .t-attr { display: flex; align-items: center; gap: 14px; }
+    .t-rule { width: 28px; height: 2px; background: var(--amber); flex-shrink: 0; }
+    .t-name { font-size: 14px; font-weight: 700; color: var(--parchment); text-align: left; }
+    .t-role { font-size: 12px; color: #4B5563; margin-top: 2px; text-align: left; }
 
-    .practitioner-photo { position: sticky; top: 90px; }
-
-    .practitioner-photo img {
-      width: 100%;
-      border-radius: var(--radius);
-      display: block;
+    /* ── ENGAGEMENTS ── */
+    .engagements-section { background: var(--paper); }
+    .eng-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .eng-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 20px;
     }
-
-    .photo-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin-top: 14px;
+    .eng-num {
+      font-size: 11px; font-weight: 700; color: var(--amber);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
     }
-
-    .photo-title {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 3px;
-      line-height: 1.55;
+    .eng-title {
+      font-size: 15px; font-weight: 700; color: var(--text);
+      margin-bottom: 4px; line-height: 1.3;
     }
-
-    /* ── HOW ── */
-    .how {
-      background: var(--bg);
-      padding: 80px 28px;
-      border-top: 1px solid var(--border);
+    .eng-dur {
+      font-size: 12px; color: var(--muted);
+      font-style: italic; margin-bottom: 12px;
     }
-
-    .how-inner { max-width: 900px; margin: 0 auto; }
-
-    .how-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .how-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-    }
-
-    .how-card-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .how-card-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .how-card-desc {
-      font-size: 13px;
-      color: var(--body);
-      line-height: 1.65;
-    }
+    .eng-desc { font-size: 13px; color: var(--body); line-height: 1.65; text-align: left; }
 
     /* ── CONNECT ── */
-    .connect { background: var(--dark); padding: 80px 28px; }
-
-    .connect-inner { max-width: 900px; margin: 0 auto; }
-
-    .connect h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(20px, 3vw, 30px);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.35;
-      margin-bottom: 16px;
-      max-width: 560px;
+    .connect-section { background: var(--ink); }
+    .connect-body {
+      font-size: 16px; color: #6B7280;
+      line-height: 1.75; margin-bottom: 32px;
     }
-
-    .connect-sub {
-      font-size: 15px;
-      color: #64748B;
-      margin-bottom: 40px;
-      max-width: 500px;
-      line-height: 1.7;
+    .connect-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-block; padding: 13px 26px;
+      background: var(--amber); color: var(--ink);
+      font-size: 14px; font-weight: 700;
+      text-decoration: none; border-radius: var(--radius);
+      transition: background 0.15s;
     }
-
-    .connect-links { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .connect-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 24px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    .btn-primary:hover { background: var(--amber-dark); }
+    .btn-secondary {
+      display: inline-block; padding: 13px 26px;
+      background: transparent; color: #94A3B8;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; border-radius: var(--radius);
+      border: 1px solid #2D3748;
+      transition: border-color 0.15s, color 0.15s;
     }
-
-    .connect-btn-primary { background: var(--teal); color: var(--white); border: 1px solid var(--teal); }
-    .connect-btn-primary:hover { background: #0D5E49; border-color: #0D5E49; }
-
-    .connect-btn-secondary { background: transparent; color: #94A3B8; border: 1px solid #2D3748; }
-    .connect-btn-secondary:hover { border-color: #4B5563; color: var(--white); }
+    .btn-secondary:hover { border-color: #6B7280; color: var(--white); }
 
     /* ── FOOTER ── */
-    .footer {
-      background: #080C10;
-      padding: 24px 28px;
-      border-top: 1px solid #1C2128;
+    footer {
+      background: #080C10; padding: 20px clamp(20px, 4vw, 40px);
+      border-top: 1px solid var(--ink-mid);
     }
-
-    .footer-inner { max-width: 900px; margin: 0 auto; }
-
-    .footer p { font-size: 12px; color: #374151; line-height: 1.6; }
-    .footer p + p { margin-top: 4px; }
+    .footer-inner { max-width: 700px; margin: 0 auto; }
+    footer p { font-size: 12px; color: #374151; line-height: 1.6; }
+    footer p + p { margin-top: 3px; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 720px) {
+    @media (max-width: 640px) {
       .nav-links { display: none; }
-      .hero, .signals, .practitioner, .how, .pulse-cta, .connect { padding: 56px 20px; }
-      .practitioner-inner { grid-template-columns: 1fr; gap: 36px; }
-      .practitioner-photo { position: static; max-width: 200px; }
-      .how-cards { grid-template-columns: 1fr; }
-      .pulse-card { max-width: 100%; }
+      .eng-grid  { grid-template-columns: 1fr; }
+      .photo-wrap { width: 140px; }
+    }
+    @media (max-width: 400px) {
+      .nav-cta { display: none; }
     }
   </style>
 </head>
@@ -364,121 +300,159 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <span class="nav-name">Manish Sinha</span>
-  <ul class="nav-links">
-    <li><a href="#signals">The signals</a></li>
-    <li><a href="#practitioner">Background</a></li>
-    <li><a href="#how">How I work</a></li>
-    <li><a href="#connect">Connect</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a class="nav-name" href="/">Manish Sinha</a>
+    <ul class="nav-links">
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="https://diagnostic.manishsinha.com" class="nav-cta" target="_blank" rel="noopener">Start the Diagnostic</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">Operating Model &amp; Organization Design Partner</span>
-    <h1>Most Global Capability Centers (GCCs) scale the headcount. Not all of them scale the organization.</h1>
-    <p class="hero-sub">I work with GCC leaders to build the structural foundation that lets the organization keep pace with growth — before the gaps start affecting delivery.</p>
+    <h1>At a certain point, the structure that built your Global Capability Center starts to slow it down.</h1>
+    <div class="signals">
+      <div class="signal"><p>Decisions that used to happen in days are consistently taking longer. Not because the work is harder — because the structure is producing them that way.</p></div>
+      <div class="signal"><p>Strong people are leaving. One or two at a time, quietly. The exit interviews say better opportunity. Something in the design is the real answer.</p></div>
+      <div class="signal"><p>Global is still confident. But the questions are getting more pointed, and the center is taking longer to answer them than it should.</p></div>
+      <div class="signal"><p>Managers who were exceptional before they led teams are carrying more than the structure was designed for. The support around them has not kept pace.</p></div>
+      <div class="signal"><p>The operating model that worked at 150 to 200 people is being asked to carry an organization three or four times that size. Nobody decided to let that happen. It just did.</p></div>
+    </div>
+    <p class="bridge">I work with GCC leaders to address these structural gaps, using the GCC Scalability Index™ — a proprietary framework across eight dimensions.</p>
   </div>
 </section>
 
-<!-- SIGNALS -->
-<section class="signals" id="signals">
-  <div class="container">
-    <span class="section-label">The signals</span>
-    <h2 class="section-heading">They are usually already visible. They rarely resolve on their own.</h2>
-    <div>
-      <div class="signal"><p>Decisions that should happen locally are consistently escalating to global. Nobody designed it that way — the structure produces it.</p></div>
-      <div class="signal"><p>Strong people are leaving. Not dramatically — one or two at a time, quietly. The exit interviews are not telling you the full story.</p></div>
-      <div class="signal"><p>Your managers are capable. The structure they are operating in was not designed for where the organization is now.</p></div>
-      <div class="signal"><p>Delivery is still happening. But it depends on specific individuals working harder than the design should require.</p></div>
-      <div class="signal"><p>The operating model that worked at 300 people is being asked to run an organization two or three times that size.</p></div>
+<!-- FRAMEWORK -->
+<section class="section framework-section" id="framework">
+  <div class="section-inner">
+    <span class="label label-muted">The GCC Scalability Index™</span>
+    <h2 class="sec-h">Eight dimensions. Three priority tiers.</h2>
+    <p class="sec-sub">Each engagement is structured around this framework — applied through live conversations, not surveys or forms.</p>
+    <div class="tier">
+      <div class="tier-label">Strategic Anchors</div>
+      <div class="dim-row">
+        <span class="dim anchor">Operating Model</span>
+        <span class="dim anchor">Global Stakeholder Management</span>
+        <span class="dim anchor">Leadership Capability</span>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-label">Core Execution</div>
+      <div class="dim-row">
+        <span class="dim core">Employer Brand &amp; Talent Attraction</span>
+        <span class="dim core">Cross-Border Governance</span>
+        <span class="dim core">Organization Design</span>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-label">Operational Hygiene</div>
+      <div class="dim-row">
+        <span class="dim hygiene">HR &amp; Compliance Maturity</span>
+        <span class="dim hygiene">Workforce Cost Structure</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PULSE CTA -->
-<section class="pulse-cta">
-  <div class="pulse-cta-inner">
-    <span class="section-label">GCC Scalability Index™</span>
-    <h2>Before any conversation, it helps to know what you are working with.</h2>
-    <p class="pulse-cta-sub">Score your center across 8 dimensions in 3 to 5 minutes. The diagnostic report arrives straight to your inbox — no consultant on the phone until you choose to be.</p>
-    <a href="https://pulse.manishsinha.com" target="_blank" rel="noopener" class="pulse-card">
+<!-- DIAGNOSTIC -->
+<section class="section diagnostic-section">
+  <div class="section-inner">
+    <span class="label label-amber">GCC Scalability Diagnostic</span>
+    <h2 class="sec-h-serif">Before any conversation, it helps to know what you are working with.</h2>
+    <p class="sec-sub-dark">Benchmark your center across 8 dimensions and receive a structured diagnostic report straight to your inbox. 8 questions. 6 to 8 minutes.</p>
+    <a href="https://diagnostic.manishsinha.com" target="_blank" rel="noopener" class="diag-card">
       <div>
-        <div class="pulse-card-name">GCC Scalability Pulse Check</div>
-        <div class="pulse-card-meta">8 dimensions &middot; 3 to 5 minutes &middot; pulse.manishsinha.com</div>
+        <div class="diag-title">GCC Scalability Diagnostic</div>
+        <div class="diag-meta">8 dimensions &middot; 6 to 8 minutes &middot; diagnostic.manishsinha.com</div>
       </div>
-      <div class="pulse-card-arrow">→</div>
+      <div class="diag-arrow">→</div>
     </a>
   </div>
 </section>
 
 <!-- PRACTITIONER -->
-<section class="practitioner" id="practitioner">
-  <div class="practitioner-inner">
-    <div class="practitioner-text">
-      <span class="section-label">Background</span>
-      <h2 class="section-heading" style="margin-bottom:28px;">The work is different when you have been accountable for it.</h2>
-      <p>I was part of the founding leadership team that built the India GCC of a USD 125 billion company from the first hire to over 2,500 employees across technology, analytics, finance, and corporate functions. The build was the straightforward part. The harder phase was when the organization began to outgrow the structure that had enabled it — spans straining, leadership gaps surfacing in delivery roles, decisions slowing. I was accountable for resolving it, not advising on it from the outside.</p>
-      <p>Before that, I led workforce integration and organization redesign through a major global technology acquisition — retaining 100% of identified critical talent during a period of maximum organizational uncertainty. I have held senior HR leadership roles across India, APAC, China, and Argentina. The structural cost reduction that disciplined redesign can deliver is significant — and in my experience, achievable without capability or engagement loss.</p>
-      <p>I am a Gallup-Certified Strengths Coach. Strengths science informs how I approach leadership design and capability development at every tier of the GCC structure.</p>
-      <div class="credentials">
-        <span class="credential-tag">GCC Build &amp; Scale</span>
-        <span class="credential-tag">Operating Model Design</span>
-        <span class="credential-tag">Organization Redesign</span>
-        <span class="credential-tag">Cross-Border Governance</span>
-        <span class="credential-tag">Gallup-Certified Strengths Coach</span>
-        <span class="credential-tag">India &middot; APAC &middot; Europe</span>
-      </div>
-    </div>
-    <div class="practitioner-photo">
-      <img src="images/manish.jpeg" alt="Manish Sinha — Operating Model & Organization Design Partner">
+<section class="section practitioner-section" id="background">
+  <div class="section-inner">
+    <div class="photo-wrap">
+      <img src="images/manish.jpeg" alt="Manish Sinha — GCC Scalability Partner">
       <div class="photo-name">Manish Sinha</div>
-      <div class="photo-title">Operating Model &amp; Organization Design Partner<br>Greater Bengaluru Area</div>
+      <div class="photo-sub">GCC Scalability Partner · Greater Bengaluru Area</div>
+    </div>
+    <span class="label label-muted">Background</span>
+    <p class="prac-lead">The work is different when you have been accountable for it — not just advised on it.</p>
+    <p class="prac-body">I was part of the founding leadership team that built the India GCC of a USD 125 billion global company from the first hire to over 2,500 employees across technology, analytics, finance, and corporate functions. When the organization began to outgrow the structure that had enabled it — spans straining, leadership gaps surfacing, decisions slowing — I was accountable for resolving it. Before that, I led HR for the India center of a globally recognized technology company through a major international acquisition, retaining 100% of identified critical talent through a period of maximum organizational uncertainty. I am also a Gallup-Certified Strengths Coach, and strengths science informs how I approach leadership design at every tier.</p>
+    <div class="creds">
+      <span class="cred">GCC Build &amp; Scale</span>
+      <span class="cred">Operating Model Design</span>
+      <span class="cred">Organization Redesign</span>
+      <span class="cred">Gallup-Certified Strengths Coach</span>
     </div>
   </div>
 </section>
 
-<!-- HOW I WORK -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <span class="section-label">How I work</span>
-    <h2 class="section-heading">Focused, time-bound, and tied to business outcomes.</h2>
-    <div class="how-cards">
-      <div class="how-card">
-        <div class="how-card-num">Stage 01</div>
-        <div class="how-card-title">The Clarity Sprint</div>
-        <div class="how-card-desc">A structured 4-week diagnostic across the 8 dimensions of the GCC Scalability Index™. Delivers a prioritized action plan with owners, timelines, and commercial impact — not a presentation.</div>
+<!-- TESTIMONIAL -->
+<section class="section testimonial-section">
+  <div class="section-inner">
+    <span class="label label-amber">Peer perspective</span>
+    <p class="t-quote">He became a true strategic partner to the business, helping navigate the inevitable complexity that comes with rapid growth — leadership transitions, organizational redesign, scaling challenges, and cross-border stakeholder alignment. Manish brings a rare combination of strategic thinking, operational discipline, and genuine partnership. Any organization building or scaling global capability centers would benefit tremendously from his experience and leadership.</p>
+    <div class="t-attr">
+      <div class="t-rule"></div>
+      <div>
+        <div class="t-name">Kristen Lenz</div>
+        <div class="t-role">Global HR Leader &mdash; worked with Manish across two organizations</div>
       </div>
-      <div class="how-card">
-        <div class="how-card-num">Stage 02</div>
-        <div class="how-card-title">The Scale Blueprint</div>
-        <div class="how-card-desc">A defined 3 to 6 month engagement. Redesigns the operating model, organization structure, and cross-border governance framework — delivered by milestone against business outcomes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="section engagements-section" id="engagements">
+  <div class="section-inner">
+    <span class="label label-muted">Engagements</span>
+    <h2 class="sec-h">Focused, time-bound, tied to outcomes.</h2>
+    <div class="eng-grid">
+      <div class="eng-card">
+        <div class="eng-num">01</div>
+        <div class="eng-title">The Scalability Sprint</div>
+        <div class="eng-dur">4 weeks</div>
+        <div class="eng-desc">A structured diagnostic across all 8 dimensions of the GCC Scalability Index™, applied through live conversations. Delivers a prioritized action plan with owners, timelines, and commercial impact.</div>
       </div>
-      <div class="how-card">
-        <div class="how-card-num">Stage 03</div>
-        <div class="how-card-title">The Growth Partnership</div>
-        <div class="how-card-desc">Ongoing monthly advisory to the GCC Head and India leadership team. Senior support through a critical scaling phase, without adding a permanent layer to the organization.</div>
+      <div class="eng-card">
+        <div class="eng-num">02</div>
+        <div class="eng-title">The Scale Blueprint</div>
+        <div class="eng-dur">3 to 6 months</div>
+        <div class="eng-desc">A defined engagement that redesigns the operating model, organization structure, and cross-border governance framework. Delivered by milestone against business outcomes.</div>
+      </div>
+      <div class="eng-card">
+        <div class="eng-num">03</div>
+        <div class="eng-title">The Growth Partnership</div>
+        <div class="eng-dur">Monthly engagement</div>
+        <div class="eng-desc">Ongoing advisory to the GCC Head and India leadership team through a critical scaling phase — without adding a permanent layer to the organization.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONNECT -->
-<section class="connect" id="connect">
-  <div class="connect-inner">
-    <span class="section-label" style="color:var(--teal);">Connect</span>
-    <h2>If what you are reading reflects something you are navigating, the conversation is worth having.</h2>
-    <p class="connect-sub">No pitch. No discovery call script. A direct conversation about what you are seeing and whether it is something I can help with.</p>
+<section class="section connect-section" id="connect">
+  <div class="section-inner">
+    <span class="label label-amber">Connect</span>
+    <h2 class="sec-h-serif">If what you are reading reflects something you are navigating, the conversation is worth having.</h2>
+    <p class="connect-body">No pitch. No discovery call script. A direct conversation about what you are seeing and whether it is something I can help with.</p>
     <div class="connect-links">
-      <a href="mailto:manish@manishsinha.com" class="connect-btn connect-btn-primary">manish@manishsinha.com</a>
-      <a href="https://www.linkedin.com/in/manishsinhagcc" target="_blank" rel="noopener" class="connect-btn connect-btn-secondary">LinkedIn</a>
+      <a href="mailto:manish@manishsinha.com" class="btn-primary">manish@manishsinha.com</a>
+      <a href="https://www.linkedin.com/in/manishsinhagcc" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer>
   <div class="footer-inner">
     <p>GCC Scalability Index™ is a proprietary framework of Manish Sinha.</p>
     <p>Gallup® and CliftonStrengths® are trademarks of Gallup, Inc. All rights reserved.</p>
